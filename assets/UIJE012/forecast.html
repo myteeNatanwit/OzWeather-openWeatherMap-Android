@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="content-language" content="en" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<script src="js/jquery.min.js"></script>
+
+<script type="text/javascript" src="js/jquery.bgscroll.js"></script>
+<script src="js/yql2.js" type="text/javascript"></script>
+
+<link href="css/ozwstyle.css" rel="stylesheet" type="text/css" />
+<link href="css/mycss.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.mobile-1.3.2.min.js"></script>
+<link rel="stylesheet" href="css/jquery.mobile-1.3.2.min.css" />
+<link href="css/font-awesome.css" rel="stylesheet" type="text/css" />
+<style>
+body{
+//overflow:hidden;
+-webkit-user-select: none
+}
+.title{
+  font-size: 16px;
+}
+.weatherForecast{
+  padding-bottom: 10%;
+}
+#container{
+  overflow-y:scroll;
+  height:100%;
+}
+
+</style>
+</head>
+<body>
+<div class="loading">
+  <img src="img/spin2.gif" >
+  </div>
+
+<div data-role="page" id="foo" data-theme="b" >
+<div id="header" data-role="header" data-theme="b" data-position="fixed" >
+<span class="ui-title">Week forecast</span>
+<a href="index.html" rel="external" data-icon="back" class="ui-btn-left">Back</a> 
+
+	</div><!-- /header -->
+<div  id="container" >
+    <div id="forecast"></div>		
+	</div><!-- /content -->
+
+</div><!-- /page -->
+<script>
+$(document).ready(function () {
+  $('.loading').show();
+//document.ontouchmove = function(e) {e.preventDefault()};
+//$("#container").bgscroll({scrollSpeed:15 , direction:'h' });
+var param= getQueryVariable("data");
+var Varray=[];
+Varray.push(param);
+
+$('#forecast').weatherfeed(Varray,{link:false,forecast:true}, $('.loading').hide());
+// $('#forecast').weatherfeed(Varray,{link:false,forecast:true});
+});
+
+function getQueryVariable(variable) {
+  var query = window.location.search.substring(1);
+  var vars = query.split("&");
+  for (var i=0;i<vars.length;i++) {
+    var pair = vars[i].split("=");
+    if (pair[0] == variable) {
+      return pair[1];
+    }
+  } 
+  alert('Query Variable ' + variable + ' not found');
+}
+
+
+</script>
+</body>

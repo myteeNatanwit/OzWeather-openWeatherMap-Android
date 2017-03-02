@@ -1,0 +1,43 @@
+<html>
+<head>
+<style>
+
+</style>
+<script type="text/javascript">
+ function set_text(txt){
+  document.getElementById("exchange").innerHTML = txt;
+    }
+ function showAndroidToast(toastmsg) {
+        bridge.showToast(toastmsg);
+    }
+ function showAndroidDialog(dialogmsg) {
+        bridge.showDialog(dialogmsg);
+    }
+     
+ function Javascript_function(f_name, param) {
+ switch (f_name) {
+  case "text":
+  if (!param) param = "NULL";
+  set_text(param);
+  break;
+ case "dialog":
+  if (param == "OK") {set_text("OK pressed")} else {set_text("nothing return")};
+  break;
+ default:
+  set_text("undefined JAVA call");
+  break;  
+ }
+  
+ }
+   
+</script>
+</head>
+<body>
+<center>
+ <h1 id="exchange">Simple Bridge</h1>
+       
+        <button onclick="showAndroidDialog('Hello! text from Javascript.')"> showAndroidDialog </button>
+        <button onclick="showAndroidToast('text from javascript')"> show Android Toast </button>
+</center> 
+</body>
+</html>

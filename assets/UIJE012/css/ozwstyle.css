@@ -1,0 +1,87 @@
+﻿/* with some experiment for imitate the auweather look and feel, failed bytheway*/
+@charset "UTF-8";
+.limg{
+	/*margin-top: 10px;*/
+}
+body {
+	margin: 0;
+	font-family: Tahoma, Genevam, sans-serif;
+}
+
+form { margin-bottom: 1em; }
+
+.weatherFeed {
+
+    color:#fff;
+	//position:absolute;
+	font-family: Arial, Helvetica, sans-serif;
+	//font-size: 90%;
+	margin: 0;
+	padding:0;
+	//width: 280px;
+	width: 100%;
+	left:0;
+	//top:30px;
+	box-shadow: 
+	 0 5px 15px 1px rgba(0, 0, 0, 0.6), 
+	 0 0 200px 1px rgba(255, 255, 255, 0.5);
+}
+.weatherFeed a { color: #888; }
+.weatherFeed a:hover {
+	color: #000;
+	text-decoration: none;
+}
+.weatherItem {
+	padding: 2px;
+	text-align: right;
+}
+.weatherCity { text-transform: uppercase;text-align: left; float:left;font-size: 1.0em; margin-left:2px; }
+.weatherTemp {
+	font-size: 2.5em;
+	font-weight: bold;
+}
+.weatherDesc, .weatherCity, .weatherForecastDay  { font-weight: bold;}
+.weatherDesc { margin-bottom: 0.4em; 
+text-transform: capitalize;
+}
+.weatherRange, .weatherWind, .weatherLink, .weatherForecastItem { font-size: 0.8em; padding:0 0 4px 0;}
+.weatherRange{ font-size:1.2em}
+.weatherLink, .weatherForecastItem {
+	margin-top: 1px;
+	text-align: left;
+	
+}
+.weatherForecastItem {
+    color:#fff;
+	padding: 0.5em 0.5em 0.5em 60px;
+	//background-color: DeepSkyBlue; 
+	//background-color:#87CEFA;
+	background:rgba(0, 0, 0, 0.3);
+	background-position: left center;
+	//min-width:300px;
+	min-height:40px;
+	-webkit-border-radius:5px;
+	//box-shadow:  0 5px 15px 1px rgba(0, 0, 0, 0.6), 
+}
+//.weatherForecastDay { font-size: 1.2em; }
+.weatherForecastDay, .weatherForecastDate, .weatherForecastText, .weatherForecastRange {font-size:16px;}
+.rangehi, .rangelow{
+min-width:20px;
+padding:5px;
+text-align:center;
+display:block;
+font-size:18px;
+color:white;
+float:left;
+-webkit-border-radius:25%;
+margin:2px;
+}
+.rangehi{
+background:red;
+}
+.rangelow{
+//background:#0000CD;
+background:#1E90FF;
+}
+.odd { background-color: #e8e8fc; }
+.even { background-color: #d4d4e8; }
